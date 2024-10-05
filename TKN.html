@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toko Kopi Naluri</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
+    <style>
+        /* CSS untuk mengatur posisi dan gaya tombol */
+        .audio-controls {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            display: flex;
+            align-items: center;
+        }
+
+        .audio-controls span,
+        .audio-controls label {
+            margin-right: 5px;
+        }
+
+        /* Gaya tombol */
+        button {
+            background-color: #919191; /* Warna latar belakang hijau */
+            color: white; /* Warna teks putih */
+            border: none; /* Tanpa border */
+            padding: 10px 15px; /* Padding untuk tombol */
+            text-align: center; /* Teks di tengah */
+            text-decoration: none; /* Tanpa garis bawah */
+            display: inline-block; /* Mengatur tampilan */
+            font-size: 16px; /* Ukuran font */
+            margin: 0 5px; /* Margin di sekitar tombol */
+            cursor: pointer; /* Mengubah kursor saat hover */
+            border-radius: 5px; /* Sudut yang membulat */
+            transition: background-color 0.3s; /* Transisi saat hover */
+        }
+
+        button:hover {
+            background-color: #45a049; /* Warna saat hover */
+        }
+
+        /* Gaya input volume */
+        input[type="range"] {
+            -webkit-appearance: none; /* Menghilangkan gaya default */
+            width: 100px; /* Lebar input */
+            height: 5px; /* Tinggi input */
+            background: #ddd; /* Latar belakang */
+            border-radius: 5px; /* Sudut yang membulat */
+            outline: none; /* Menghilangkan outline */
+        }
+
+        input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none; /* Menghilangkan gaya default */
+            appearance: none; /* Menghilangkan gaya default */
+            width: 15px; /* Lebar thumb */
+            height: 15px; /* Tinggi thumb */
+            background: #4CAF50; /* Warna thumb */
+            border-radius: 50%; /* Membulatkan thumb */
+            cursor: pointer; /* Mengubah kursor saat hover */
+        }
+
+        input[type="range"]::-moz-range-thumb {
+            width: 15px;
+            height: 15px;
+            background: #4CAF50;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div id="welcomeModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Selamat Datang!</h2>
+            <p>Selamat datang di Toko Kopi Naluri!</p>
+            <button id="closeModalBtn">Tutup</button>
+        </div>
+    </div>
+    
+    <!-- Tambahkan elemen audio -->
+    <audio id="welcomeMusic" src="Musik.mp3" preload="auto"></audio>
+    
+    <div class="audio-controls">
+        <button id="playBtn">Play</button>
+        <button id="pauseBtn">Pause</button>
+    </div>
+
+    <div class="logo">
+        <img src="LOGO TKN.jpg" alt="Toko Kopi Santai" class="logo-photo" width="100" height="100"/>
+    </div>
+    <h1>Toko Kopi Naluri</h1>
+</header>
+
+<nav>
+    <a href="#profil">Profil</a>
+    <a href="#daftarminuman">Daftar Minuman</a>
+    <a href="#daftarmakanan">Daftar Makanan</a>
+    <a href="#lokasi">Lokasi</a>
+    <a href="#kontak">Kontak</a>
+</nav>
+
+<section id="profil">
+    <h2>Profil</h2>
+    <p>Toko Kopi Naluri (TKN) adalah cabang dari Naluri Hati yang merupakan toko kopi yang berada di JL. Lamtoro Gung Kota Palangkaraya. TKN berada di JL. C Mihing Kota Palangkaraya.</p>
+    <p>TKN merupakan toko kopi yang berfokus pada tampilan industrial, dengan kualitas kopi dan makanan yang ditawarkan kepada pelanggan.</p>
+    <p>TKN memiliki suasana yang industrial tetapi sangat “homie” sehingga pelanggan akan merasakan suasana yang sangat “cozy” saat nongkrong bersama keluarga maupun teman-teman.</p>
+    <img src="Foto tkn.jpg" alt="Foto Profil Toko Kopi Naluri" class="profil-photo" width="960" height="480"/>    
+</section>
+
+<section id="daftarminuman">
+    <h2>Daftar Minuman</h2>
+    <div class="minuman">
+        <div class="daftar-minuman">
+            <a href="americano.html" class="custom-link">
+                <img src="americano.jpg" alt="Americano" class="minuman-photo"/>
+                <h3>Americano</h3>
+                <p class="harga">Rp 30.000</p>
+            </a>
+        </div>
+        <div class="daftar-minuman">
+            <a href="lotus.html" class="custom-link">
+                <img src="Kencana.jpg" alt="Kencana" class="minuman-photo"/>
+                <h3>Kencana</h3>
+                <p class="harga">Rp 25.000</p>
+            </a>
+        </div>
+        <div class="daftar-minuman">
+            <a href="everest.html" class="custom-link">
+                <img src="everest.jpg" alt="everest" class="minuman-photo"/>
+                <h3>Everest</h3>
+                <p class="harga">Rp 20.000</p>
+            </a>
+        </div>
+        <div class="daftar-minuman">
+            <a href="merry.html" class="custom-link">
+                <img src="merryber.jpg" alt="merryber" class="minuman-photo"/>
+                <h3>Merry Berry</h3>
+                <p class="harga">Rp 30.000</p>
+            </a>
+        </div>
+        <div class="daftar-minuman">
+            <a href="stroberi.html" class="custom-link">
+                <img src="strawtea.jpg" alt="strawtea" class="minuman-photo"/>
+                <h3>Strawberry Tea</h3>
+                <p class="harga">Rp 15.000</p>
+            </a>
+        </div>
+    </div>
+</section>
+
+<section id="daftarmakanan">
+    <h2>Daftar Makanan</h2>
+    <div class="makanan">
+        <div class="daftar-makanan">
+            <a href="beef.html" class="custom-link">
+                <img src="mentai.jpg" alt="beef" class="makanan-photo"/>
+                <h3>Beef Mentai</h3>
+                <p class="harga">Rp 32.000</p>
+            </a>
+        </div>
+        <div class="makanan">
+            <div class="daftar-makanan">
+                <a href="ayam.html" class="custom-link">
+                    <img src="mentega.jpg" alt="ayam" class="makanan-photo"/>
+                    <h3>Ayam Mentega</h3>
+                    <p class="harga">Rp 28.000</p>
+                </a>
+            </div>
+            <div class="makanan">
+                <div class="daftar-makanan">
+                    <a href="pisang.html" class="custom-link">
+                        <img src="pisgor.jpg" alt="pisgor" class="makanan-photo"/>
+                        <h3>Pisang Goreng</h3>
+                        <p class="harga">Rp 20.000</p>
+                    </a>
+                </div>
+                <div class="makanan">
+                    <div class="daftar-makanan">
+                        <a href="kentang.html" class="custom-link">
+                            <img src="kengor.jpg" alt="kengor" class="makanan-photo"/>
+                            <h3>French Fries</h3>
+                            <p class="harga">Rp 18.000</p>
+                        </a>
+                    </div>
+                    <div class="makanan">
+                        <div class="daftar-makanan">
+                            <a href="churros.html" class="custom-link">
+                                <img src="churro.jpg" alt="churros" class="makanan-photo"/>
+                                <h3>Churros</h3>
+                                <p class="harga">Rp 23.000</p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+</section>
+
+<section id="lokasi">
+    <h2>Lokasi</h2>
+    <p>Toko Kopi Naluri berlokasi di Jalan C. Mihing No. 18, Kota Palangka Raya, Indonesia. Kami berada di pusat kota, sehingga mudah dijangkau oleh pelanggan.</p>
+    <p><strong>Jam Buka:</strong> Setiap hari Pukul 09.00-23.00 WIB</p>
+    <a href="https://www.google.com/maps/place/Toko+Kopi+Naluri/@-2.2204455,113.9200477,17z/data=!3m1!4b1!4m6!3m5!1s0x2dfcb3000d9437a9:0x316d3b07c0509fde!8m2!3d-2.2204509!4d113.9226226!16s%2Fg%2F11y3y6bvfp?entry=ttu&g_ep=EgoyMDI0MTAwMS4wIKXMDSoASAFQAw%3D%3D" target="_blank">
+        <img src="lokasi tkn.png" alt="Gambar Lokasi" class="location-photo" />
+    </a>
+</section>
+
+<section id="kontak">
+    <h2>Kontak</h2>
+    <p>Hubungi kami untuk informasi lebih lanjut:</p>
+    <ul>
+        <li>Telepon: +62 812-3456-7890</li>
+        <li>Email: info@tokokopinaluri.com</li>
+        <li>Instagram: @tokokopinaluri</li>
+    </ul>
+</section>
+
+<footer>
+    <p>&copy; 2024 Toko Kopi Naluri. All rights reserved.</p>
+</footer>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        // Menampilkan modal setiap kali halaman di-refresh
+        const modal = document.getElementById("welcomeModal");
+        modal.style.display = "block";
+
+        // Menutup modal saat klik tombol tutup
+        const closeModal = document.querySelector(".close");
+        closeModal.onclick = function() {
+            modal.style.display = "none";
+        };
+
+        // Menutup modal saat klik tombol tutup
+        document.getElementById("closeModalBtn").onclick = function() {
+            modal.style.display = "none";
+        };
+
+        // Menutup modal jika klik di luar modal
+        window.onclick = function(event) {
+            if (event.target === modal) {
+                modal.style.display = "none";
+            }
+        };
+
+        // Menambahkan efek klik pada item menu
+        document.querySelectorAll(".menu-item").forEach((item) => {
+            item.addEventListener("click", () => {
+                window.location.href = item.querySelector("a").getAttribute("href");
+            });
+        });
+
+        // Menambahkan transisi halus saat navigasi
+        document.querySelectorAll("nav ul li a").forEach((link) => {
+            link.addEventListener("click", (event) => {
+                event.preventDefault();
+                const targetId = link.getAttribute("href").substring(1);
+                const targetElement = document.getElementById(targetId);
+                targetElement.scrollIntoView({ behavior: "smooth" });
+            });
+        });
+
+        // Kontrol audio
+        const welcomeMusic = document.getElementById("welcomeMusic");
+        const playBtn = document.getElementById("playBtn");
+        const pauseBtn = document.getElementById("pauseBtn");
+        const volumeControl = document.getElementById("volumeControl");
+
+        playBtn.addEventListener("click", () => {
+            welcomeMusic.play();
+        });
+
+        pauseBtn.addEventListener("click", () => {
+            welcomeMusic.pause();
+        });
+
+        volumeControl.addEventListener("input", (event) => {
+            welcomeMusic.volume = event.target.value;
+        });
+    });
+</script>
+
+</body>
+</html>

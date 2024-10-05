@@ -1,0 +1,241 @@
+/* Tampilan Umum */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #F5F5F7; /* Warna latar belakang fallback */
+    background-image: url('marble.webp'); /* Ganti dengan path gambar Anda */
+    background-size: cover; /* Memastikan gambar menutupi seluruh area */
+    background-position: center; /* Memusatkan gambar */
+    background-repeat: no-repeat; /* Menghindari pengulangan gambar */
+}
+
+.profil-photo {
+    border-radius: 10px; /* Membuat foto sedikit melengkung (opsional) */
+    margin: 10px auto; /* Jarak antara penjelasan dan foto, terpusat */
+    display: block; /* Memastikan foto berada di baris baru */
+}
+
+header {
+    background: 
+        linear-gradient(135deg, rgba(255, 255, 255, 0.8), rgba(169, 169, 169, 0.8)), /* Gradien marmer */
+        url('marmer.webp'); /* Ganti dengan path gambar marmer */
+    background-size: cover; /* Mengatur agar gambar memenuhi elemen */
+    background-position: center; /* Mengatur posisi gambar di tengah */
+    color: #000000;
+    padding: 7px;
+    text-align: center;
+    position: relative; /* Memungkinkan posisi absolut logo */
+}
+
+.logo-photo {
+    border-radius: 50%; /* Membuat gambar menjadi bulat */
+    object-fit: cover; /* Mengatur gambar agar tidak terdistorsi */
+}
+
+nav {
+    background-color: #0a0a0a;
+    overflow: hidden;
+}
+
+nav a {
+    float: left;
+    display: block;
+    color: #f5f4f4;
+    text-align: center;
+    padding: 14px 20px;
+    text-decoration: none;
+}
+
+nav a:hover {
+    background-color: #F5F5F7;
+}
+
+section {
+    padding: 20px;
+    margin: 20px;
+    color: #060606;
+    border-radius: 5px;
+}
+
+.minuman,
+.makanan {
+    display: flex;
+    flex-wrap: wrap; /* Agar item turun ke baris berikutnya jika layar sempit */
+    gap: 20px; /* Jarak antara item */
+}
+
+.daftar-minuman,
+.daftar-makanan {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Mengatur item agar terpusat secara horizontal */
+    justify-content: center; /* Mengatur item agar terpusat secara vertikal */
+    width: 150px; /* Lebar item */
+    padding: 8px; /* Ruang di dalam border */
+    border-left: 2px solid #141413; /* Border kiri */
+    border-right: 2px solid #705C53; /* Border kanan */
+    border-radius: 10px; /* Membuat border sedikit melengkung */
+    background-color: #ffffff; /* Warna latar belakang item */
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1); /* Tambahkan bayangan untuk efek 3D */
+    transition: transform 0.2s ease; /* Efek transisi untuk hover */
+    text-align: center; /* Mengatur teks agar rata tengah */
+}
+
+.daftar-minuman img,
+.daftar-makanan img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    margin-bottom: 10px; /* Jarak antara gambar dan teks */
+}
+
+.daftar-minuman span,
+.daftar-makanan span {
+    font-weight: bold;
+    margin-top: 10px; /* Jarak antara teks dan elemen lain */
+}
+
+.location-photo {
+    max-width: 25%; /* Ukuran gambar untuk layar desktop */
+    border-radius: 20px;
+    transition: transform 0.2s ease-in-out;
+}
+
+.location-photo:hover {
+    transform: scale(1.1);
+}
+
+footer {
+    background-color: #B7B7B7;
+    color: #705C53;
+    text-align: center;
+    padding: 5px 0;
+    position: static;
+    width: 100%;
+    bottom: 0;
+}
+
+.custom-link {
+    color: inherit; /* Menggunakan warna teks dari elemen induk */
+    text-decoration: none; /* Menghapus garis bawah pada link */
+}
+
+.custom-link:hover {
+    text-decoration: underline; /* Menambahkan garis bawah saat hover (opsional) */
+}
+
+h2 {
+    color: #302524;
+}
+
+/* Tampilan Modal */
+.modal {
+    display: none; /* Tersembunyi secara default */
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.8); /* Latar belakang gelap */
+}
+
+.modal-content {
+    background-color: #ffffff;
+    margin: 10% auto;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 90%;
+    max-width: 400px;
+    text-align: center;
+}
+
+.close {
+    color: #ff0000;
+    float: right;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #b30000;
+    cursor: pointer;
+}
+
+/* Responsive Design */
+@media only screen and (max-width: 768px) {
+    header {
+        padding: 10px;
+    }
+
+    nav a {
+        padding: 10px 15px;
+        font-size: 14px;
+    }
+
+    section {
+        margin: 10px;
+        padding: 15px;
+    }
+
+    .minuman, .makanan {
+        flex-direction: column; /* Mengubah layout menjadi kolom */
+    }
+
+    .daftar-minuman, .daftar-makanan {
+        width: 100%; /* Mengatur agar card memenuhi lebar layar */
+        padding: 10px;
+        margin-bottom: 10px; /* Jarak antar card */
+    }
+
+    .daftar-minuman img, .daftar-makanan img {
+        width: 80px;
+        height: 80px;
+    }
+
+    .location-photo {
+        max-width: 90%; /* Gambar menjadi 90% dari lebar container pada layar di bawah 768px */
+        height: auto;
+        margin: 0 auto; /* Terpusatkan gambar */
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    nav a {
+        float: none;
+        display: block;
+        text-align: left;
+        padding: 10px;
+    }
+
+    .minuman, .makanan {
+        flex-direction: column; /* Kolom pada layar kecil */
+    }
+
+    .daftar-minuman, .daftar-makanan {
+        width: 100%; /* Mengatur lebar penuh untuk card */
+        margin-bottom: 15px; /* Jarak antar item */
+        padding: 15px;
+        text-align: center;
+    }
+
+    .daftar-minuman img, .daftar-makanan img {
+        width: 60px;
+        height: 60px; /* Sesuaikan ukuran gambar */
+    }
+
+    .modal-content {
+        width: 95%;
+        max-width: 300px;
+    }
+
+    .location-photo {
+        max-width: 100%; /* Gambar memenuhi lebar container pada layar lebih kecil */
+        height: auto;
+        margin: 0 auto; /* Gambar tetap terpusat */
+    }
+}
